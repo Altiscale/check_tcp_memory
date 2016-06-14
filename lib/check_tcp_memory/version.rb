@@ -1,3 +1,3 @@
-module CheckTcpMemory
-  VERSION = "0.1.0"
+module CheckTCPMemory
+  VERSION = "1.0.0"
 end

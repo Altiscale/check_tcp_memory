@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'check_tcp_memory'
+require 'check_tcp_memory/cli'
+require 'check_tcp_memory/check'
+
+CheckTCPMemory::Check.run! CheckTCPMemory::CLI.parse(ARGV)

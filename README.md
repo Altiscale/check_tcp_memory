@@ -1,8 +1,6 @@
-# CheckTcpMemory
+# CheckTCPMemory
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/check_tcp_memory`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a simple Nagios/Sensu check that checks that the current TCP memory usage is below the maximum allowed in the Linux kernel.  This will find leaking TCP sockets.
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ check_tcp_memory -h
+Usage: check_tcp_memory -w <warn percent> -c <critical percent>
+    -w, --warn-percent PERCENT       Warning when percentage of total TCP memory is over this threashold. Default: 50%
+    -c, --crit-percent PERCENT       Critical when percentage of total TCP memory is over this threashold. Default: 60%
+    -h, --help                       Show this message
+        --version                    Show version
+```
 
 ## Development
 
@@ -32,5 +37,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/check_tcp_memory. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Altiscale/check_tcp_memory. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
