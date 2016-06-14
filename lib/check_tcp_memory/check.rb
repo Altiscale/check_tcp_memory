@@ -21,10 +21,8 @@ module CheckTCPMemory
     end
 
     def check
-      #@mem_max = File.read('/proc/sys/net/ipv4/tcp_mem').split()[2]
-      @mem_max = File.read('/tmp/tcp_mem').split()[2].to_f
-      #@current_usage = File.read('/proc/net/sockstat').gsub(':','').split("\n")\
-      @current_usage = File.read('/tmp/sockstat').gsub(':','').split("\n")\
+      @mem_max = File.read('/proc/sys/net/ipv4/tcp_mem').split()[2]
+      @current_usage = File.read('/proc/net/sockstat').gsub(':','').split("\n")\
         .map{|a| b=a.split; Hash[b.shift, Hash[*b]]}\
         .reduce({}, :merge)['TCP']['mem'].to_f
       @percent_used = @current_usage / @mem_max
